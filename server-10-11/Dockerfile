@@ -1,9 +1,9 @@
 FROM blacklabelops/java:openjre7
 
 ENV DERBY_VERSION=10.11.1.1 
-ENV	DERBY_INSTALL=/db-derby-$DERBY_VERSION-bin 
-ENV	DERBY_HOME=/db-derby-$DERBY_VERSION-bin 
-ENV	CLASSPATH=$DERBY_INSTALL/lib/derbynet.jar:$DERBY_INSTALL/lib/derbytools.jar:.
+ENV DERBY_INSTALL=/db-derby-$DERBY_VERSION-bin 
+ENV DERBY_HOME=/db-derby-$DERBY_VERSION-bin 
+ENV CLASSPATH=$DERBY_INSTALL/lib/derbynet.jar:$DERBY_INSTALL/lib/derbytools.jar:.
 ENV PORT_TO_EXPOSE=1527
 	
 RUN \
@@ -16,7 +16,7 @@ RUN \
 	mkdir -p /dbbackup &&\
 	mkdir -p /upload &&\
 	rm -Rf /var/cache/apk/* && \
-    rm -Rf /tmp/* && \
+    	rm -Rf /tmp/* && \
 	rm -Rf /var/log/*
 	
 COPY init.sql /upload/
